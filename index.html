@@ -2,59 +2,60 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>وكالة حرف | كتابة محتوى وتسويق بالمحتوى</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="وكالة حرف لكتابة المحتوى التسويقي والإبداعي، نصنع الحروف التي تصنع تأثيرًا ونبني هوية لغوية تعبر عن علامتك."
-  />
-
+  <title>وكالة حرف | كتابة محتوى إبداعية وذكاء اصطناعي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-fH1Yg8C0lXcYQf3c3q7lJH4VqCwKXvSkp7F9sXwU3yO4CwQfS3lZnFycGq4nYQpH7Q8p0zBUOLhdu73X6M7wQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --color-bg: #ffffff;
-      --color-text: #333333;
-      --color-gold: #c49a6c;
-      --color-purple: #6d597a;
-      --color-light: #f7f7f7;
-      --max-width: 1100px;
-      --radius-lg: 20px;
-      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.06);
+      --bg-dark: #0b0612;
+      --bg-section: #12091e;
+      --bg-soft: #1b102b;
+      --text-main: #ffffff;
+      --text-muted: #c7c7d9;
+      --accent-gold: #c49a6c;
+      --accent-purple: #6d597a;
+      --accent-electric: #c77dff;
+      --accent-cyan: #4ad5ff;
+      --light-gray: #f7f7f7;
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.55);
+      --shadow-glow: 0 0 40px rgba(199, 125, 255, 0.45);
+      --transition-fast: 0.25s ease-out;
+      --transition-med: 0.35s ease-out;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
-    body {
-      font-family: "Cairo", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      direction: rtl;
-      text-align: right;
-      line-height: 1.7;
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top left, #251335 0, #0b0612 45%, #050309 100%);
+      color: var(--text-main);
+      font-family: "Cairo", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body::before {
+      /* subtle paper / noise texture */
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: 0.22;
+      mix-blend-mode: soft-light;
+      z-index: 0;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     img {
@@ -62,1687 +63,2094 @@
       display: block;
     }
 
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
+    .page {
+      position: relative;
+      min-height: 100vh;
+      z-index: 1;
+      color: var(--text-main);
     }
 
-    /* Header & Nav */
+    /* Layout */
+
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(11, 6, 18, 0.9), rgba(11, 6, 18, 0.4));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 0;
-      gap: 1.5rem;
+      gap: 24px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--color-purple);
+      gap: 10px;
     }
 
     .logo-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff, var(--color-purple));
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 20% 0, #f8f4ff, #6d597a 40%, #0b0612 100%);
+      box-shadow: var(--shadow-glow);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      font-size: 1.3rem;
-      box-shadow: 0 10px 25px rgba(109, 89, 122, 0.5);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: #fdf7ff;
     }
 
-    nav ul {
-      list-style: none;
+    .logo-text {
       display: flex;
-      gap: 1.5rem;
-      font-size: 0.95rem;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    nav a {
+    .logo-text-main {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      opacity: 0.85;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
       position: relative;
-      padding-bottom: 0.15rem;
-      transition: color 0.2s;
+      font-weight: 500;
+      color: var(--text-muted);
     }
 
-    nav a::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
-      right: 0;
-      bottom: 0;
+      inset-inline-end: 0;
+      bottom: -4px;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--color-gold), var(--color-purple));
-      transition: width 0.25s;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-electric));
+      transition: width var(--transition-fast);
     }
 
-    nav a:hover::after {
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover::after {
       width: 100%;
     }
 
     .nav-cta {
-      display: none;
-    }
-
-    @media (min-width: 880px) {
-      .nav-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        padding: 0.45rem 0.95rem;
-        border-radius: 999px;
-        border: 1px solid rgba(196, 154, 108, 0.5);
-        font-size: 0.9rem;
-        background: linear-gradient(135deg, #fff8f0, #fefcf9);
-        cursor: pointer;
-        transition: box-shadow 0.2s, transform 0.15s;
-      }
-
-      .nav-cta:hover {
-        box-shadow: 0 12px 24px rgba(196, 154, 108, 0.22);
-        transform: translateY(-1px);
-      }
-    }
-
-    /* Hero */
-    .hero {
-      padding: 3.5rem 0 3rem;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(196, 154, 108, 0.2), transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(109, 89, 122, 0.2), transparent 55%);
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 2.5rem;
+      display: flex;
       align-items: center;
+      gap: 10px;
     }
 
-    @media (min-width: 880px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      }
-    }
-
-    .hero-kicker {
-      font-size: 0.9rem;
-      color: var(--color-gold);
+    .btn {
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 9px 18px;
+      font-size: 13px;
       font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-kicker i {
-      font-size: 0.95rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 0.3rem;
-      color: var(--color-purple);
-    }
-
-    .hero-subtitle {
-      font-size: 1.05rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero-tagline {
-      font-size: 0.98rem;
-      color: #555;
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-tagline strong {
-      color: var(--color-gold);
-      font-weight: 700;
-    }
-
-    .hero-bullets {
-      list-style: none;
-      margin: 1.3rem 0 1.6rem;
-      display: grid;
-      gap: 0.6rem;
-    }
-
-    .hero-bullets li {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.95rem;
-    }
-
-    .hero-bullets i {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(196, 154, 108, 0.12);
-      color: var(--color-gold);
-      font-size: 0.9rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      font-family: inherit;
-      border-radius: 999px;
-      padding: 0.6rem 1.3rem;
-      font-size: 0.95rem;
-      border: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      white-space: nowrap;
-      transition: transform 0.15s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+      gap: 8px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+      background: none;
+      color: var(--text-main);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--color-purple), #4f3f5c);
-      color: #fff;
-      box-shadow: 0 14px 28px rgba(109, 89, 122, 0.45);
+      background: linear-gradient(135deg, var(--accent-electric), var(--accent-cyan));
+      color: #050309;
+      box-shadow: 0 14px 40px rgba(199, 125, 255, 0.5);
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 35px rgba(109, 89, 122, 0.55);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(199, 125, 255, 0.7);
     }
 
-    .btn-secondary {
-      background: #fff;
-      border: 1px solid rgba(109, 89, 122, 0.25);
-      color: var(--color-text);
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--text-muted);
     }
 
-    .btn-secondary:hover {
-      background: #faf7ff;
-      border-color: rgba(109, 89, 122, 0.5);
-      transform: translateY(-1px);
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.02);
     }
 
-    .hero-meta {
-      font-size: 0.78rem;
-      color: #777;
-      margin-top: 0.8rem;
+    .btn i {
+      font-size: 13px;
     }
 
-    .hero-visual {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 1.7rem 1.5rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(109, 89, 122, 0.08);
+    /* Hero */
+
+    .hero {
       position: relative;
       overflow: hidden;
+      padding: 70px 20px 80px;
     }
 
-    .hero-visual-header {
-      display: flex;
-      justify-content: space-between;
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
       align-items: center;
-      margin-bottom: 1.2rem;
     }
 
-    .hero-badge {
-      font-size: 0.8rem;
-      color: var(--color-gold);
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      background: #fff8f2;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
-    .hero-visual-dots {
+    .hero-kicker-span {
+      width: 30px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-cyan), transparent);
+    }
+
+    .hero-title {
+      font-size: 40px;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #fff, #f7d3ff, var(--accent-electric));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 22px;
+    }
+
+    .hero-badges {
       display: flex;
-      gap: 0.25rem;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
-    .hero-visual-dots span {
-      width: 7px;
-      height: 7px;
+    .badge {
       border-radius: 999px;
-      background: rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--text-muted);
+      background: linear-gradient(135deg, rgba(20, 12, 35, 0.95), rgba(23, 11, 30, 0.9));
+    }
+
+    .badge i {
+      font-size: 12px;
+      color: var(--accent-gold);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 16px;
     }
 
     .hero-note {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      color: #555;
-    }
-
-    .hero-note strong {
-      color: var(--color-purple);
-    }
-
-    .hero-list {
-      list-style: none;
-      display: grid;
-      gap: 0.4rem;
-      font-size: 0.86rem;
-    }
-
-    .hero-list li {
+      font-size: 12px;
+      color: var(--text-muted);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
     }
 
-    .hero-list i {
-      font-size: 0.8rem;
-      color: var(--color-gold);
+    .hero-note i {
+      color: var(--accent-gold);
+      font-size: 12px;
     }
 
-    .hero-visual-tag {
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .metric {
+      min-width: 105px;
+    }
+
+    .metric-value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Hero visual side */
+
+    .hero-visual {
+      position: relative;
+      height: 100%;
+      min-height: 320px;
+      perspective: 1200px;
+    }
+
+    .hero-orbit {
       position: absolute;
-      inset-inline-start: 14px;
-      bottom: 14px;
-      font-size: 0.78rem;
-      background: rgba(109, 89, 122, 0.06);
-      padding: 0.25rem 0.7rem;
+      inset: -60px -40px -40px;
+      background:
+        radial-gradient(circle at 20% 0, rgba(255, 255, 255, 0.08), transparent 50%),
+        radial-gradient(circle at 80% 100%, rgba(76, 201, 240, 0.08), transparent 55%),
+        radial-gradient(circle at 30% 115%, rgba(199, 125, 255, 0.23), transparent 55%);
+      filter: blur(6px);
+      opacity: 0.8;
+    }
+
+    .hero-panel {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      padding: 26px 24px;
+      background: linear-gradient(145deg, rgba(10, 7, 20, 0.97), rgba(35, 18, 54, 0.98));
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transform-style: preserve-3d;
+      transform: rotateY(-8deg) rotateX(7deg);
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(76, 201, 240, 0.15), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-panel-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-status {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .hero-status-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 9px;
       border-radius: 999px;
-      color: #555;
-      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(76, 201, 240, 0.45);
+    }
+
+    .hero-status-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #5cffc2 0, #18a34a 40%, #000 100%);
+      box-shadow: 0 0 12px rgba(92, 255, 194, 0.9);
+    }
+
+    .hero-mini-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .hero-mini-tab {
+      padding: 4px 9px;
+      border-radius: 999px;
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    .hero-mini-tab.active {
+      background: linear-gradient(135deg, rgba(199, 125, 255, 0.35), rgba(74, 213, 255, 0.35));
+      opacity: 1;
+    }
+
+    .hero-script-window {
+      position: relative;
+      z-index: 2;
+      border-radius: 22px;
+      padding: 14px 14px 16px;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 65%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(4px);
+      margin-bottom: 14px;
+    }
+
+    .hero-script-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-script-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #3b3450;
+    }
+
+    .hero-dot:nth-child(1) {
+      background: #ff5f57;
+    }
+
+    .hero-dot:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .hero-dot:nth-child(3) {
+      background: #28c840;
+    }
+
+    .hero-script-body {
+      font-size: 12px;
+      line-height: 1.7;
+      color: #ebebff;
+      max-height: 150px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-script-body span.highlight {
+      color: var(--accent-cyan);
+    }
+
+    .hero-script-body span.gold {
+      color: var(--accent-gold);
+    }
+
+    .hero-script-overlay {
+      position: absolute;
+      inset: 60% 0 0;
+      background: linear-gradient(to bottom, transparent, #0b0612);
+      pointer-events: none;
+    }
+
+    .hero-floating-cards {
+      position: absolute;
+      inset: auto 0 6px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-float-card {
+      min-width: 120px;
+      border-radius: 18px;
+      padding: 10px 12px;
+      background: linear-gradient(145deg, rgba(10, 7, 20, 0.96), rgba(28, 16, 40, 0.98));
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transform: translateZ(40px);
+    }
+
+    .hero-float-card i {
+      font-size: 14px;
+      color: var(--accent-gold);
+    }
+
+    .hero-float-tag {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .hero-float-main {
+      font-size: 11px;
+    }
+
+    .hero-photo-strip {
+      position: absolute;
+      inset-inline-start: 12px;
+      top: 55%;
+      width: 90px;
+      border-radius: 120px;
+      padding: 5px;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.22), rgba(0, 0, 0, 0.95));
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+      transform: translateZ(60px) rotateZ(-10deg);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      height: 120px;
+      border-radius: 999px;
+      overflow: hidden;
+      background-image: url("https://images.pexels.com/photos/6335/man-coffee-cup-pen.jpg?auto=compress&cs=tinysrgb&w=800");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.3) contrast(1.08);
+    }
+
+    .hero-photo-caption {
+      padding-top: 7px;
+      text-align: center;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .hero-photo-caption span {
+      color: var(--accent-gold);
     }
 
     /* Sections */
+
     section {
-      padding: 3rem 0;
+      position: relative;
+      padding: 60px 20px;
     }
 
     section:nth-of-type(even) {
-      background: var(--color-light);
+      background: radial-gradient(circle at top right, #1a0c2a 0, #0b0612 55%);
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .section-header {
-      max-width: 620px;
-      margin: 0 auto 2rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
-    .section-eyebrow {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-gold);
-      margin-bottom: 0.4rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
+    .section-kicker {
+      font-size: 12px;
+      color: var(--accent-cyan);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     .section-title {
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-      color: var(--color-purple);
+      font-size: 26px;
+      margin: 0 0 6px;
     }
 
-    .section-subtitle {
-      font-size: 0.95rem;
-      color: #555;
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 480px;
     }
 
-    /* Why Harf */
-    .pill-list {
-      display: grid;
-      gap: 0.6rem;
-      max-width: 700px;
-      margin: 0 auto;
-      list-style: none;
-    }
-
-    .pill-item {
-      background: #fff;
-      padding: 0.9rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.03);
+    .chips {
       display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.95rem;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
     }
 
-    .pill-item i {
-      width: 26px;
-      height: 26px;
+    .chip {
       border-radius: 999px;
-      display: inline-flex;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 5px 11px;
+      color: var(--text-muted);
+      background: rgba(10, 7, 20, 0.85);
+    }
+
+    /* Services grid */
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-3d {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.055), transparent 55%), linear-gradient(145deg, #170e24, #0c0715);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
+    }
+
+    .card-3d::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(199, 125, 255, 0.17), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition-med);
+      pointer-events: none;
+    }
+
+    .card-3d:hover {
+      transform: translateY(-8px) translateZ(20px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .card-3d:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(109, 89, 122, 0.08);
-      color: var(--color-purple);
-      font-size: 0.9rem;
+      margin-bottom: 10px;
+      background: radial-gradient(circle at 30% 0, #fffaf4, #c49a6c 40%, #281b3d 100%);
+      color: #1a1024;
+      box-shadow: 0 14px 40px rgba(196, 154, 108, 0.7);
     }
 
-    /* Services */
-    .services-grid {
-      display: grid;
-      gap: 1.5rem;
+    .card-icon i {
+      font-size: 18px;
     }
 
-    @media (min-width: 880px) {
-      .services-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .service-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 1.3rem 1.2rem 1.4rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .service-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 16px;
-      background: rgba(109, 89, 122, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-purple);
-      margin-bottom: 0.3rem;
-      font-size: 1.1rem;
-    }
-
-    .service-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.15rem;
-      color: var(--color-text);
-    }
-
-    .service-sub {
-      font-size: 0.86rem;
-      color: #777;
-      margin-bottom: 0.35rem;
-    }
-
-    .service-list {
-      list-style: none;
-      font-size: 0.86rem;
-      display: grid;
-      gap: 0.3rem;
-      color: #555;
-    }
-
-    .service-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .service-list i {
-      font-size: 0.72rem;
-      color: var(--color-gold);
-    }
-
-    /* Features */
-    .features-grid {
-      display: grid;
-      gap: 1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: 0.95rem;
-    }
-
-    .feature-item i {
-      margin-top: 0.1rem;
-      font-size: 0.88rem;
-      color: #2e9c4b;
-    }
-
-    /* About */
-    .about-grid {
-      display: grid;
-      gap: 1.8rem;
-      align-items: flex-start;
-    }
-
-    @media (min-width: 880px) {
-      .about-grid {
-        grid-template-columns: 1.1fr 1fr;
-      }
-    }
-
-    .about-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      font-size: 0.95rem;
-    }
-
-    .about-values {
-      list-style: none;
-      font-size: 0.9rem;
-      display: grid;
-      gap: 0.35rem;
-      margin-top: 0.7rem;
-    }
-
-    .about-values li {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .about-values i {
-      font-size: 0.78rem;
-      color: var(--color-purple);
-    }
-
-    .about-highlight {
-      background: linear-gradient(135deg, #fff8f1, #fdf5ff);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem 1.1rem;
-      font-size: 0.9rem;
-      border: 1px dashed rgba(196, 154, 108, 0.6);
-    }
-
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      gap: 1.3rem;
-    }
-
-    @media (min-width: 880px) {
-      .testimonials-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .testimonial-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.1rem 1rem 1.2rem;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
-      font-size: 0.9rem;
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 150px;
-    }
-
-    .testimonial-text {
-      margin-bottom: 0.9rem;
-      color: #444;
-    }
-
-    .testimonial-author {
+    .card-title {
+      font-size: 17px;
+      margin-bottom: 8px;
       font-weight: 600;
-      color: var(--color-purple);
-      font-size: 0.9rem;
+    }
+
+    .card-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      color: #e8e5ff;
+    }
+
+    .card-list li {
+      padding: 3px 0;
       display: flex;
-      align-items: center;
-      gap: 0.4rem;
+      gap: 6px;
     }
 
-    .testimonial-author i {
-      font-size: 0.8rem;
-      color: var(--color-gold);
+    .card-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      margin-top: 7px;
+      background: radial-gradient(circle, var(--accent-electric), transparent);
     }
 
-    /* FAQ */
-    .faq-list {
-      max-width: 700px;
-      margin: 0 auto;
+    /* AI Services */
+
+    .ai-section {
+      background: radial-gradient(circle at 10% 0, #2a113c 0, #0b0612 60%);
+    }
+
+    .ai-layout {
       display: grid;
-      gap: 0.8rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 30px;
+      align-items: stretch;
     }
 
-    .faq-item {
-      border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      background: #fff;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 0.95rem;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .faq-question span {
-      font-weight: 500;
-    }
-
-    .faq-question i {
-      font-size: 0.95rem;
-      color: var(--color-purple);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 0.95rem;
-      font-size: 0.86rem;
-      color: #555;
-      transition: max-height 0.25s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 200px;
-      padding-bottom: 0.8rem;
-    }
-
-    /* Pricing */
-    .pricing-grid {
-      display: grid;
-      gap: 1.3rem;
-    }
-
-    @media (min-width: 880px) {
-      .pricing-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .pricing-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.2rem 1.5rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
+    .ai-highlight {
+      padding: 20px 18px;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 0 0, rgba(199, 125, 255, 0.25), transparent 55%), linear-gradient(135deg, #14051f, #221234);
+      border: 1px solid rgba(199, 125, 255, 0.4);
+      box-shadow: var(--shadow-glow);
       position: relative;
       overflow: hidden;
     }
 
-    .pricing-card.featured {
-      border-color: rgba(109, 89, 122, 0.4);
-      box-shadow: 0 20px 40px rgba(109, 89, 122, 0.25);
-    }
-
-    .pricing-tag {
+    .ai-highlight::before {
+      content: "";
       position: absolute;
-      inset-inline-start: 12px;
-      top: 12px;
-      font-size: 0.75rem;
-      background: rgba(109, 89, 122, 0.1);
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      color: var(--color-purple);
+      inset: -20%;
+      background: radial-gradient(circle at 80% 0, rgba(74, 213, 255, 0.35), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      pointer-events: none;
     }
 
-    .pricing-name {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-top: 0.4rem;
+    .ai-label {
+      font-size: 11px;
+      color: #fceeff;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .ai-main-title {
+      font-size: 22px;
+      margin: 0 0 6px;
+    }
+
+    .ai-main-title span {
+      color: var(--accent-gold);
+    }
+
+    .ai-main-sub {
+      font-size: 13px;
+      color: #f1e7ff;
+      max-width: 420px;
+      margin-bottom: 14px;
+    }
+
+    .ai-tagline {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-tagline i {
+      color: var(--accent-cyan);
+      font-size: 12px;
+    }
+
+    .ai-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .ai-pill {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(10, 7, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-muted);
+    }
+
+    .ai-panes {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .ai-pane {
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #130a20, #1e0f2c);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 12px;
+    }
+
+    .ai-pane-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .ai-pane-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .ai-pane-badge {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(74, 213, 255, 0.6);
+      color: var(--accent-cyan);
+    }
+
+    .ai-pane-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .ai-pane-list li {
+      padding: 3px 0;
+    }
+
+    /* Pricing */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .pricing-card {
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 18px;
+      background: linear-gradient(150deg, #160c24, #0c0714);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(196, 154, 108, 0.7);
+      box-shadow: 0 22px 60px rgba(196, 154, 108, 0.65);
+      background: radial-gradient(circle at 0 0, rgba(196, 154, 108, 0.25), transparent 55%), linear-gradient(140deg, #22141c, #0a0508);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .pricing-label {
+      font-size: 11px;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .pricing-title {
+      font-size: 18px;
+      margin-bottom: 4px;
     }
 
     .pricing-price {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--color-purple);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .pricing-price span {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #777;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 400;
     }
 
     .pricing-list {
       list-style: none;
-      font-size: 0.86rem;
-      display: grid;
-      gap: 0.35rem;
-      color: #555;
+      padding: 0;
+      margin: 0 0 14px;
+      font-size: 12px;
+      color: #f3ecff;
     }
 
     .pricing-list li {
+      padding: 3px 0;
+      display: flex;
+      gap: 6px;
+    }
+
+    .pricing-list li i {
+      font-size: 11px;
+      color: var(--accent-gold);
+      margin-top: 3px;
+    }
+
+    /* About & testimonials & FAQ */
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .about-text p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .about-values {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: #f4efff;
+    }
+
+    .about-values li {
+      padding: 4px 0;
+      display: flex;
+      gap: 8px;
+    }
+
+    .about-values li i {
+      font-size: 12px;
+      color: var(--accent-cyan);
+      margin-top: 4px;
+    }
+
+    .testimonials {
+      display: grid;
+      gap: 14px;
+    }
+
+    .testimonial-card {
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #140a1f, #180f29);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote {
+      margin-bottom: 6px;
+    }
+
+    .testimonial-name {
+      font-size: 12px;
+      color: var(--accent-gold);
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      left: 18px;
+      top: -10px;
+      font-size: 40px;
+      color: rgba(255, 255, 255, 0.08);
+      font-family: "Georgia", serif;
+    }
+
+    .faq-list {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #140a20, #0d0617);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 14px;
+      font-size: 13px;
+    }
+
+    .faq-item {
+      padding: 7px 0;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
-    .pricing-list i {
-      font-size: 0.78rem;
-      color: var(--color-gold);
+    .faq-item:last-child {
+      border-bottom: none;
     }
 
-    .pricing-cta {
-      margin-top: 1rem;
+    .faq-index {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     /* Contact */
-    .contact-grid {
-      display: grid;
-      gap: 1.8rem;
+
+    .contact-section {
+      background: radial-gradient(circle at bottom, #1d1030 0, #050309 55%);
     }
 
-    @media (min-width: 880px) {
-      .contact-grid {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 30px;
+      align-items: flex-start;
     }
 
     .contact-info {
-      font-size: 0.95rem;
+      font-size: 14px;
+      color: var(--text-muted);
       display: grid;
-      gap: 0.75rem;
+      gap: 12px;
     }
 
-    .contact-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-
-    .contact-row i {
-      margin-top: 0.1rem;
-      color: var(--color-purple);
-    }
-
-    .contact-socials {
+    .contact-line {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
-      margin-top: 0.4rem;
-      font-size: 0.95rem;
+      gap: 10px;
     }
 
-    .contact-socials a {
-      display: inline-flex;
+    .contact-line i {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      font-size: 0.9rem;
-      transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-
-    .contact-socials a:hover {
-      background: var(--color-purple);
-      color: #fff;
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(109, 89, 122, 0.4);
-    }
-
-    .contact-note {
-      font-size: 0.82rem;
-      color: #777;
-      margin-top: 0.4rem;
+      background: radial-gradient(circle at 30% 0, #fff, #c49a6c 45%, #21131d 100%);
+      color: #160910;
+      font-size: 12px;
     }
 
     .contact-form {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem 1.5rem;
+      border-radius: var(--radius-xl);
+      padding: 20px 18px;
+      background: linear-gradient(145deg, #150c22, #0d0615);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      font-size: 0.9rem;
     }
 
     .form-row {
       display: grid;
-      gap: 0.9rem;
-      margin-bottom: 0.8rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
-    @media (min-width: 640px) {
-      .form-row.half {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .form-control {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
     }
 
-    label {
-      display: block;
-      font-size: 0.82rem;
-      margin-bottom: 0.2rem;
-      color: #555;
+    .form-control label {
+      color: var(--text-muted);
     }
 
-    input,
-    textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 0.55rem 0.7rem;
-      font-family: inherit;
-      font-size: 0.9rem;
+    .form-control input,
+    .form-control textarea,
+    .form-control select {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 9px 10px;
+      background: rgba(4, 3, 9, 0.9);
+      color: #ffffff;
+      font-size: 12px;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-      background: #fafafa;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      font-family: inherit;
+      resize: none;
     }
 
-    input:focus,
-    textarea:focus {
-      border-color: var(--color-purple);
-      box-shadow: 0 0 0 1px rgba(109, 89, 122, 0.23);
-      background: #fff;
+    .form-control input:focus,
+    .form-control textarea:focus,
+    .form-control select:focus {
+      border-color: var(--accent-electric);
+      box-shadow: 0 0 0 1px rgba(199, 125, 255, 0.5);
+      background: rgba(7, 4, 19, 0.98);
     }
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
+    .form-helper {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
-    .form-footer {
-      margin-top: 0.6rem;
+    .form-submit-row {
+      margin-top: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.7rem;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
-    .form-footer p {
-      font-size: 0.8rem;
-      color: #777;
+    .form-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* Footer */
+    .form-note i {
+      font-size: 11px;
+      color: var(--accent-gold);
+    }
+
     footer {
-      padding: 1.6rem 0 1.8rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-      font-size: 0.8rem;
-      color: #777;
-      background: #faf9fb;
+      padding: 18px 20px 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(3, 2, 6, 0.96);
+      margin-top: 30px;
     }
 
     .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 16px;
       flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .footer-brand span {
-      font-weight: 600;
-      color: var(--color-purple);
     }
 
     .footer-links {
       display: flex;
-      gap: 0.8rem;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .footer-links a {
-      transition: color 0.2s;
+      color: var(--text-muted);
     }
 
     .footer-links a:hover {
-      color: var(--color-purple);
+      color: #ffffff;
     }
 
-    /* Small adjustments */
-    @media (max-width: 640px) {
-      .hero {
-        padding-top: 2.7rem;
-      }
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
 
-      .section-header {
-        text-align: right;
+    .social-links a {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .social-links a:hover {
+      border-color: var(--accent-electric);
+      color: #ffffff;
+      transform: translateY(-2px);
+      background: rgba(199, 125, 255, 0.12);
+    }
+
+    /* Scroll animations */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .hero {
+        padding-top: 40px;
+      }
+      .ai-layout,
+      .split-layout,
+      .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .hero-panel {
+        transform: none;
+        border-radius: 24px;
+      }
+      .hero-photo-strip {
+        display: none;
+      }
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-section,
+      section {
+        padding-inline: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-      <a href="#top" class="logo">
-        <div class="logo-mark">
-          <i class="fa-solid fa-pen-nib"></i>
-        </div>
-        <span>وكالة حرف</span>
-      </a>
-
-      <nav>
-        <ul>
-          <li><a href="#services">الخدمات</a></li>
-          <li><a href="#why">لماذا حرف؟</a></li>
-          <li><a href="#about">من نحن</a></li>
-          <li><a href="#pricing">الباقات</a></li>
-          <li><a href="#contact">تواصل</a></li>
-        </ul>
-      </nav>
-
-      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        <i class="fa-regular fa-paper-plane"></i>
-        اطلب عرض سعر
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-kicker">
-            <i class="fa-regular fa-pen-to-square"></i>
-            مرحبًا بك في
-          </div>
-          <h1 class="hero-title">وكالة حرف</h1>
-          <p class="hero-subtitle">من أول حرف... تبدأ الحكاية.</p>
-          <p class="hero-tagline">
-            في عالم الكلمات، نبدأ من الحرف. نحن وكالة متخصصة في كتابة المحتوى التسويقي والإبداعي،
-            نُشكّل الحروف لتصنع تأثيرًا، وننسج الجُمل لتروّج بفن.
-          </p>
-
-          <ul class="hero-bullets">
-            <li>
-              <i class="fa-solid fa-pen-nib"></i>
-              <span>نكتب لك قصة نجاحك</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-brain"></i>
-              <span>نرويها بلغة جمهورك</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-chart-line"></i>
-              <span>ونقودها نحو أهدافك التسويقية</span>
-            </li>
-          </ul>
-
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
-              <i class="fa-solid fa-hand-pointer"></i>
-              اختر باقتك الآن
-            </button>
-            <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-              <i class="fa-regular fa-eye"></i>
-              استكشف الخدمات
-            </button>
-          </div>
-          <p class="hero-meta">
-            كتابة إنسانية + رؤية تسويقية + التزام بالمواعيد.
-          </p>
-        </div>
-
-        <aside class="hero-visual" aria-hidden="true">
-          <div class="hero-visual-header">
-            <span class="hero-badge">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-              من الفكرة إلى النص الجاهز
-            </span>
-            <div class="hero-visual-dots">
-              <span></span><span></span><span></span>
-            </div>
-          </div>
-          <p class="hero-note">
-            <strong>ملف مشروع محتوى مكتمل</strong> يشمل:
-          </p>
-          <ul class="hero-list">
-            <li>
-              <i class="fa-regular fa-circle-check"></i>
-              هيكلة صفحات الموقع + تجربة المستخدم
-            </li>
-            <li>
-              <i class="fa-regular fa-circle-check"></i>
-              نصوص متوافقة مع محركات البحث (SEO)
-            </li>
-            <li>
-              <i class="fa-regular fa-circle-check"></i>
-              هوية لغوية ونبرة صوت موحدة
-            </li>
-            <li>
-              <i class="fa-regular fa-circle-check"></i>
-              محتوى سوشيال وإعلانات وصفحات هبوط
-            </li>
-          </ul>
-          <div class="hero-visual-tag">
-            <i class="fa-solid fa-feather-pointed"></i>
-            نكتب لك كما لو كنا جزءًا من فريقك
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Why Harf -->
-    <section id="why">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-regular fa-lightbulb"></i>
-            لماذا &quot;حرف&quot;؟
-          </div>
-          <h2 class="section-title">محتوى بوزن الكلمة وأثر الجملة</h2>
-          <p class="section-subtitle">
-            نكتب لمحبّي التفاصيل ومحركات البحث معًا، ونوازن بين اللغة الجميلة والنتيجة التسويقية الواضحة.
-          </p>
-        </div>
-
-        <ul class="pill-list">
-          <li class="pill-item">
-            <i class="fa-solid fa-scale-balanced"></i>
-            لأننا نؤمن أن لكل كلمة وزن، ولكل جملة هدف.
-          </li>
-          <li class="pill-item">
-            <i class="fa-solid fa-language"></i>
-            نصنع المحتوى الذي يتكلم بلغة جمهورك ويعبّر عن بيئته وثقافته.
-          </li>
-          <li class="pill-item">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
-            نكتب بنَفَس تفصيلي يناسب محركات البحث (SEO) بدون التضحية بسلاسة النص.
-          </li>
-          <li class="pill-item">
-            <i class="fa-solid fa-stopwatch"></i>
-            نلتزم بالجودة والمواعيد... بحرفية عالية واحترام لزمن مشروعك.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            خدماتنا
-          </div>
-          <h2 class="section-title">كل خدمة... تبدأ بحرف</h2>
-          <p class="section-subtitle">
-            مجموعة متكاملة من خدمات كتابة المحتوى، من أول سطر في موقعك وحتى آخر كلمة في تقريرك السنوي.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <!-- Content for Websites -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-            <h3 class="service-title">كتابة محتوى المواقع الإلكترونية</h3>
-            <p class="service-sub">نصوص صفحات موقعك بصوت علامتك وبأسلوب يشجّع على التصفح والتحويل.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة صفحات الموقع الرئيسية والفرعية</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحسين النصوص وصياغة عبارات الدعوة للفعل (CTAs)</li>
-              <li><i class="fa-regular fa-circle-check"></i> تكييف الأسلوب مع طبيعة جمهورك وقطاعك</li>
-              <li><i class="fa-regular fa-circle-check"></i> توافق كامل مع مبادئ SEO الأساسية</li>
-            </ul>
-          </article>
-
-          <!-- UX & Structure -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-diagram-project"></i>
-            </div>
-            <h3 class="service-title">هيكلة المواقع وتجربة المستخدم (UX)</h3>
-            <p class="service-sub">نقترح مسارًا واضحًا للمستخدم ونكتب له نصوصًا ترشده في كل خطوة.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> تنظيم الأقسام، العناوين، وترتيب الصفحات</li>
-              <li><i class="fa-regular fa-circle-check"></i> كتابة microcopy للأزرار، التنبيهات، التعليمات</li>
-              <li><i class="fa-regular fa-circle-check"></i> توجيه المستخدم عبر رحلته حتى تحقيق الهدف</li>
-            </ul>
-          </article>
-
-          <!-- Landing Pages -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-bullseye"></i>
-            </div>
-            <h3 class="service-title">صفحات الهبوط</h3>
-            <p class="service-sub">صفحات مبيعات مركّزة على التحويل، بكلمات مقنعة ومحفزات واضحة.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة صفحة هبوط مخصصة لهدفك التسويقي</li>
-              <li><i class="fa-regular fa-circle-check"></i> وصف مقنع + محفزات مدروسة للإقناع</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحسين التحويل (CRO) بناءً على أفضل الممارسات</li>
-            </ul>
-          </article>
-
-          <!-- SEO Articles -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <h3 class="service-title">مقالات SEO</h3>
-            <p class="service-sub">محتوى مفيد للقارئ ومفهوم لمحركات البحث في الوقت نفسه.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> بحث الكلمات المفتاحية وتحليل نية البحث</li>
-              <li><i class="fa-regular fa-circle-check"></i> صياغة المقال مع تنسيق ذكي للعناوين والفقرات</li>
-              <li><i class="fa-regular fa-circle-check"></i> إدراج روابط داخلية وخارجية داعمة</li>
-            </ul>
-          </article>
-
-          <!-- Social Content -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-brands fa-instagram"></i>
-            </div>
-            <h3 class="service-title">محتوى منصات التواصل الاجتماعي</h3>
-            <p class="service-sub">منشورات بلسان علامتك وبأسلوب يناسب كل منصة على حدة.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة منشورات مخصصة لكل منصة</li>
-              <li><i class="fa-regular fa-circle-check"></i> كابتشنات جذابة وتفاعلية</li>
-              <li><i class="fa-regular fa-circle-check"></i> تنويع المحتوى: توعوي، تسويقي، ترفيهي</li>
-            </ul>
-          </article>
-
-          <!-- Content Strategy -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-compass-drafting"></i>
-            </div>
-            <h3 class="service-title">استراتيجيات التسويق بالمحتوى</h3>
-            <p class="service-sub">خطة محتوى واضحة بزمن ومحتوى وقنوات جاهزة للتنفيذ.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> خطة محتوى شهرية أو ربع سنوية</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحديد أنواع المحتوى وتوقيته المناسب</li>
-              <li><i class="fa-regular fa-circle-check"></i> ملف منظم جاهز للتطبيق مع فريقك</li>
-            </ul>
-          </article>
-
-          <!-- Branding -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-signature"></i>
-            </div>
-            <h3 class="service-title">البراندينغ وصناعة الهوية اللغوية</h3>
-            <p class="service-sub">هوية مكتوبة تعرّف مشروعك بشخصيته، نبرته، ورسائله الأساسية.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> صياغة الاسم التجاري (Brand Naming)</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحديد شخصية العلامة (Tone of Voice)</li>
-              <li><i class="fa-regular fa-circle-check"></i> كتابة الهوية اللغوية (Brand Messaging)</li>
-              <li><i class="fa-regular fa-circle-check"></i> وصف العلامة وتعريفها بأسلوب تسويقي</li>
-              <li><i class="fa-regular fa-circle-check"></i> إعداد دليل لغوي مبسط للعلامة</li>
-            </ul>
-          </article>
-
-          <!-- Press & Media -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-newspaper"></i>
-            </div>
-            <h3 class="service-title">الكتابة الصحفية والإعلامية</h3>
-            <p class="service-sub">نصوص إعلامية متزنة تلائم الصحف والمنصات الإخبارية.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> صياغة بيانات صحفية احترافية</li>
-              <li><i class="fa-regular fa-circle-check"></i> كتابة مقالات رأي / تحليل / تقارير صحفية</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحرير خطابات رسمية للمتحدثين</li>
-              <li><i class="fa-regular fa-circle-check"></i> إعداد تغطيات إعلامية للفعاليات</li>
-            </ul>
-          </article>
-
-          <!-- PR & Corporate -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-handshake-angle"></i>
-            </div>
-            <h3 class="service-title">العلاقات العامة والمحتوى المؤسسي</h3>
-            <p class="service-sub">نبرة احترافية تعكس قيمة المؤسسة في كل تواصل مكتوب.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة رسائل رسمية للجهات أو الشركاء</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحرير محتوى العلاقات العامة</li>
-              <li><i class="fa-regular fa-circle-check"></i> صياغة بريد موجه للصحافة أو الجمهور</li>
-              <li><i class="fa-regular fa-circle-check"></i> نصوص لحملات السمعة المؤسسية</li>
-            </ul>
-          </article>
-
-          <!-- Events & Reports -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-calendar-days"></i>
-            </div>
-            <h3 class="service-title">محتوى الفعاليات، المطبوعات، والتقارير</h3>
-            <p class="service-sub">كل ما يحتاجه مشروعك من محتوى مطبوع أو تقريري منسق.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة كتيبات الفعاليات (Agenda, About, Speaker Bios)</li>
-              <li><i class="fa-regular fa-circle-check"></i> إعداد تقارير ختامية، تشغيلية، أو إدارية</li>
-              <li><i class="fa-regular fa-circle-check"></i> كتابة أدلة الاستخدام أو أدلة الخدمات</li>
-              <li><i class="fa-regular fa-circle-check"></i> الملفات التعريفية للشركات (Company Profile)</li>
-            </ul>
-          </article>
-
-          <!-- English Content -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-language"></i>
-            </div>
-            <h3 class="service-title">الكتابة باللغة الإنجليزية</h3>
-            <p class="service-sub">محتوى إنجليزي بلغة مهنية تناسب جمهورك وثقافة السوق.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة محتوى مواقع إلكترونية بالإنجليزية</li>
-              <li><i class="fa-regular fa-circle-check"></i> مقالات تسويقية ومدونات مهنية</li>
-              <li><i class="fa-regular fa-circle-check"></i> منشورات سوشيال ميديا بأسلوب مناسب ثقافيًا</li>
-              <li><i class="fa-regular fa-circle-check"></i> تحرير ملفات الشركات والعروض بالإنجليزية</li>
-              <li><i class="fa-regular fa-circle-check"></i> ترجمة إبداعية (Transcreation) من العربية إلى الإنجليزية</li>
-            </ul>
-          </article>
-
-          <!-- Scripts & Video Writing -->
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-clapperboard"></i>
-            </div>
-            <h3 class="service-title">كتابة السكريبتات وكتابة الفيديوهات</h3>
-            <p class="service-sub">نصوص جاهزة للإنتاج، منظمة بصيغة صوت/صورة/مونتاج.</p>
-            <ul class="service-list">
-              <li><i class="fa-regular fa-circle-check"></i> سكريبتات يوتيوب بأسلوب سردي يشد المشاهد</li>
-              <li><i class="fa-regular fa-circle-check"></i> سكريبتات Reels / Shorts / TikTok</li>
-              <li><i class="fa-regular fa-circle-check"></i> فيديوهات مبيعات وإعلانات رقمية</li>
-              <li><i class="fa-regular fa-circle-check"></i> نصوص فيديوهات الفعاليات والمؤتمرات</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Differentiators -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-solid fa-star-half-stroke"></i>
-            ما يميزنا
-          </div>
-          <h2 class="section-title">محتوى مكتوب بإنسانية... ومبني على تسويق</h2>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-item">
-            <i class="fa-regular fa-circle-check"></i>
-            <p><strong>شغف قبل الأداء:</strong> نكتب لأننا نحب الكتابة قبل أن تكون خدمة مدفوعة.</p>
-          </div>
-          <div class="feature-item">
-            <i class="fa-regular fa-circle-check"></i>
-            <p><strong>نكتب بعقل جمهورك:</strong> نفهم من يتلقى الرسالة قبل أن نختار كلماتها.</p>
-          </div>
-          <div class="feature-item">
-            <i class="fa-regular fa-circle-check"></i>
-            <p><strong>إتقان لغوي + تسويقي:</strong> لغة سليمة + منطق تسويقي واضح في كل نص.</p>
-          </div>
-          <div class="feature-item">
-            <i class="fa-regular fa-circle-check"></i>
-            <p><strong>كتابة إنسانية تبيع:</strong> لا نصوص روبوتية، بل محتوى تشعر أنه كُتب لك.</p>
-          </div>
-          <div class="feature-item">
-            <i class="fa-regular fa-circle-check"></i>
-            <p><strong>التزام تام بالمواعيد:</strong> نحترم خططك وجداول إطلاقك.</p>
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark">ح</div>
+          <div class="logo-text">
+            <div class="logo-text-main">وكالة حرف</div>
+            <div class="logo-text-sub">كتابة محتوى | استراتيجيات | ذكاء اصطناعي</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-solid fa-user-pen"></i>
-            من نحن
-          </div>
-          <h2 class="section-title">من الحرف تبدأ الرحلة</h2>
+        <div class="nav-links">
+          <a href="#hero">الرئيسية</a>
+          <a href="#services">الخدمات</a>
+          <a href="#ai-solutions">حلول الذكاء الاصطناعي</a>
+          <a href="#pricing">الباقات</a>
+          <a href="#about">من نحن</a>
+          <a href="#contact">تواصل</a>
         </div>
-
-        <div class="about-grid">
-          <div class="about-card">
-            <p>
-              نحن فريق من الكتّاب والمحررين والمسوّقين... نعيش بين السطور، ونحترف التعبير.
-            </p>
-            <p style="margin-top: 0.8rem;">
-              <strong>رسالتنا:</strong> أن نمنح علامتك التجارية صوتًا يُحكى، وأسلوبًا يُحفظ، وتأثيرًا لا يُنسى.
-            </p>
-
-            <h3 style="margin-top: 1.1rem; font-size: 1rem;">قيمنا</h3>
-            <ul class="about-values">
-              <li>
-                <i class="fa-regular fa-gem"></i>
-                <span>الإبداع قبل القواعد</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-gem"></i>
-                <span>البساطة التي تُدهش</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-gem"></i>
-                <span>فهم عميق للرسالة قبل التعبير عنها</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-gem"></i>
-                <span>العمل بشغف الحروف في كل مشروع</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="about-highlight">
-            <p style="margin-bottom: 0.7rem;">
-              نؤمن أن أفضل نص هو النص الذي يبدو بسيطًا على السطح، لكن وراءه فكر، بحث، وصناعة دقيقة للكلمة.
-            </p>
-            <p style="margin-bottom: 0.4rem;">
-              لهذا نركّز على:
-            </p>
-            <ul class="about-values">
-              <li>
-                <i class="fa-solid fa-check"></i>
-                <span>فهم هدف مشروعك قبل البدء في الكتابة</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                <span>توحيد نبرة صوت العلامة عبر جميع القنوات</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-check"></i>
-                <span>التعاون معك كجزء من فريقك، لا كجهة منفصلة</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-regular fa-comment-dots"></i>
-            آراء العملاء
-          </div>
-          <h2 class="section-title">شهادات من كتبنا لهم... وكتبونا</h2>
-        </div>
-
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <p class="testimonial-text">
-              &quot;حرف لم تكتب لي فقط، بل كتبتني.&quot;
-            </p>
-            <div class="testimonial-author">
-              <i class="fa-solid fa-user"></i>
-              <span>د. سارة العبدالله</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card">
-            <p class="testimonial-text">
-              &quot;زاد معدل التحويل بنسبة 40% بفضل صفحتهم.&quot;
-            </p>
-            <div class="testimonial-author">
-              <i class="fa-solid fa-user-tie"></i>
-              <span>فهد العنزي</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card">
-            <p class="testimonial-text">
-              &quot;أسلوب كتابي فيه روح. أشعر أنهم يكتبون بنبضنا.&quot;
-            </p>
-            <div class="testimonial-author">
-              <i class="fa-solid fa-user-pen"></i>
-              <span>رُلى خليل</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-regular fa-circle-question"></i>
-            الأسئلة الشائعة
-          </div>
-          <h2 class="section-title">أسئلة قبل أن تبدأ الحكاية</h2>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>1. ما أنواع المحتوى الذي تكتبونه؟</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              نكتب محتوى المواقع، المدونات، السوشيال ميديا، صفحات الهبوط، الملفات التعريفية، التقارير، النصوص الصحفية،
-              السكريبتات، والهوية اللغوية... ونكيّفها حسب طبيعة مشروعك.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>2. هل يمكن طلب المحتوى وحده بدون تصميم أو تطوير؟</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              نعم، خدماتنا تركز على كتابة المحتوى وصياغة النصوص. يمكنك استخدام النصوص مع فريق التصميم والتطوير لديك.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>3. ما مدة التسليم المعتادة؟</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              المدة تعتمد على حجم المشروع. غالبًا من 3 إلى 10 أيام عمل للمشاريع الصغيرة، ويتم الاتفاق على جدول واضح للمشاريع
-              الأكبر.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>4. هل تكتبون بالإنجليزية؟</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              نعم، نوفر كتابة محتوى باللغة الإنجليزية، بالإضافة إلى الترجمة الإبداعية (Transcreation) من العربية إلى
-              الإنجليزية.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>5. هل توفرون تعديلات على المحتوى؟</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              كل باقة تتضمن عددًا محددًا من جولات المراجعة. نحرص أن يخرج النص النهائي قريبًا قدر الإمكان من توقعاتك.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>6. كيف أبدأ؟</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              ببساطة: اختر الباقة المناسبة، أو راسلنا مختصرًا عن مشروعك عبر البريد أو الواتساب، ونعود إليك بعرض واضح
-              ومحدد.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
-            <i class="fa-solid fa-coins"></i>
-            باقات الأسعار
-          </div>
-          <h2 class="section-title">اختر الحزمة التي تناسب مرحلة مشروعك</h2>
-        </div>
-
-        <div class="pricing-grid">
-          <!-- Starter -->
-          <article class="pricing-card">
-            <div class="pricing-tag">مناسبة للبداية</div>
-            <h3 class="pricing-name">باقة &quot;حرف البداية&quot;</h3>
-            <p class="pricing-price">
-              500 ريال
-              <span>/ مشروع</span>
-            </p>
-            <ul class="pricing-list">
-              <li><i class="fa-regular fa-circle-check"></i> صفحة رئيسية</li>
-              <li><i class="fa-regular fa-circle-check"></i> 3 منشورات سوشيال</li>
-              <li><i class="fa-regular fa-circle-check"></i> SEO أساسي</li>
-              <li><i class="fa-regular fa-circle-check"></i> مراجعة واحدة</li>
-            </ul>
-            <div class="pricing-cta">
-              <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-                اطلب هذه الباقة
-              </button>
-            </div>
-          </article>
-
-          <!-- Impact -->
-          <article class="pricing-card featured">
-            <div class="pricing-tag">الأكثر طلبًا</div>
-            <h3 class="pricing-name">باقة &quot;حرف التأثير&quot;</h3>
-            <p class="pricing-price">
-              1500 ريال
-              <span>/ مشروع</span>
-            </p>
-            <ul class="pricing-list">
-              <li><i class="fa-regular fa-circle-check"></i> موقع كامل (5 صفحات)</li>
-              <li><i class="fa-regular fa-circle-check"></i> 8 منشورات سوشيال</li>
-              <li><i class="fa-regular fa-circle-check"></i> مقال SEO واحد</li>
-              <li><i class="fa-regular fa-circle-check"></i> CTAs + تحسين تجربة المستخدم (UX)</li>
-              <li><i class="fa-regular fa-circle-check"></i> مراجعتان</li>
-            </ul>
-            <div class="pricing-cta">
-              <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-                احجز باقة التأثير
-              </button>
-            </div>
-          </article>
-
-          <!-- Identity -->
-          <article class="pricing-card">
-            <div class="pricing-tag">لمن يبني علامة</div>
-            <h3 class="pricing-name">باقة &quot;حرف الهوية&quot;</h3>
-            <p class="pricing-price">
-              3000 ريال
-              <span>/ مشروع</span>
-            </p>
-            <ul class="pricing-list">
-              <li><i class="fa-regular fa-circle-check"></i> كتابة وهيكلة موقع كامل</li>
-              <li><i class="fa-regular fa-circle-check"></i> هوية لغوية للعلامة</li>
-              <li><i class="fa-regular fa-circle-check"></i> خطة محتوى شهرية (12 منشور)</li>
-              <li><i class="fa-regular fa-circle-check"></i> اختيار اسم المشروع (Brand Naming)</li>
-              <li><i class="fa-regular fa-circle-check"></i> جلسة استشارية</li>
-            </ul>
-            <div class="pricing-cta">
-              <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-                ناقش تفاصيل الباقة
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">
+        <div class="nav-cta">
+          <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
             <i class="fa-regular fa-envelope"></i>
-            تواصل معنا
-          </div>
-          <h2 class="section-title">لنكتب الحرف الأول في مشروعك</h2>
-          <p class="section-subtitle">
-            راسلنا لتفاصيل مشروعك أو اختر واحدة من الباقات، وسنعود إليك خلال 24 ساعة بعرض واضح.
-          </p>
+            تواصل سريع
+          </button>
+          <button class="btn btn-primary" onclick="document.getElementById('ai-solutions').scrollIntoView({behavior:'smooth'})">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            جرّب حلول الذكاء الاصطناعي
+          </button>
         </div>
+      </nav>
+    </header>
 
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="contact-row">
-              <i class="fa-regular fa-envelope"></i>
-              <div>
-                <strong>البريد الإلكتروني</strong><br />
-                <a href="mailto:contact@harfagency.com">contact@harfagency.com</a>
+    <!-- Hero -->
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-inner">
+          <div class="hero-content reveal">
+            <div class="hero-kicker">
+              <span class="hero-kicker-span"></span>
+              وكالة كتابة محتوى + ذكاء اصطناعي
+            </div>
+            <h1 class="hero-title">
+              من أول <span>حرف</span>... تبدأ الحكاية.
+            </h1>
+            <p class="hero-subtitle">
+              في عالم الكلمات، نبدأ من الحرف. نحن وكالة متخصصة في كتابة المحتوى التسويقي والإبداعي،
+              نُشكّل الحروف لتصنع تأثيرًا، وننسج الجُمل لتروّج بفن – الآن مدعومة بوكلاء ذكاء اصطناعي مخصصين لعلامتك.
+            </p>
+
+            <div class="hero-badges">
+              <div class="badge">
+                <i class="fa-solid fa-pen-nib"></i>
+                كتابة إنسانية + ذكاء اصطناعي
+              </div>
+              <div class="badge">
+                <i class="fa-solid fa-bullseye"></i>
+                محتوى يبيع ويُروى
+              </div>
+              <div class="badge">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                متوافق مع SEO وتجربة المستخدم
               </div>
             </div>
 
-            <div class="contact-row">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-              <div>
-                <strong>الجوال / واتساب</strong><br />
-                <a href="tel:+966500000000">+966 5xxxxxxx</a>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <i class="fa-solid fa-share-nodes"></i>
-              <div>
-                <strong>تابعنا على</strong>
-                <div class="contact-socials">
-                  <a href="#" aria-label="انستغرام">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                  <a href="#" aria-label="لينكدإن">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-                  <a href="#" aria-label="تويتر">
-                    <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                </div>
-                <p class="contact-note">
-                  محتوى، نصائح، وكواليس كتابة يومية من فريق حرف.
-                </p>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <i class="fa-regular fa-clock"></i>
-              <div>
-                <strong>وقت الرد</strong><br />
-                عادة نرد خلال 24 ساعة عمل مع ملخص واضح لخطوات التنفيذ.
-              </div>
-            </div>
-          </div>
-
-          <form class="contact-form">
-            <div class="form-row half">
-              <div>
-                <label for="name">الاسم الكامل</label>
-                <input type="text" id="name" placeholder="مثال: أحمد خالد" />
-              </div>
-              <div>
-                <label for="company">اسم المشروع / الجهة</label>
-                <input type="text" id="company" placeholder="مثال: منصة تعليمية رقمية" />
-              </div>
-            </div>
-
-            <div class="form-row half">
-              <div>
-                <label for="email">البريد الإلكتروني</label>
-                <input type="email" id="email" placeholder="you@example.com" />
-              </div>
-              <div>
-                <label for="phone">رقم التواصل (اختياري)</label>
-                <input type="tel" id="phone" placeholder="+966 5xxxxxxx" />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="package">الباقة / نوع الخدمة</label>
-                <input
-                  type="text"
-                  id="package"
-                  placeholder="مثال: باقة حرف التأثير أو كتابة محتوى موقع فقط"
-                />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="message">أخبرنا عن مشروعك باختصار</label>
-                <textarea
-                  id="message"
-                  placeholder="عرّفنا بالمشروع، الهدف، المنصة، وأي ملاحظات مهمة..."
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="form-footer">
-              <button type="submit" class="btn-primary">
-                <i class="fa-regular fa-paper-plane"></i>
-                أرسل الطلب
+            <div class="hero-cta-row">
+              <button class="btn btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+                <i class="fa-solid fa-file-signature"></i>
+                ابدأ بحجز باقتك الآن
               </button>
-              <p>لن نشارك بياناتك مع أي طرف ثالث. نستخدمها فقط للتواصل معك بشأن مشروعك.</p>
+              <button class="btn btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+                <i class="fa-regular fa-eye"></i>
+                استكشف خدمات المحتوى
+              </button>
             </div>
-          </form>
+
+            <div class="hero-note">
+              <i class="fa-regular fa-circle-check"></i>
+              نكتب لك قصة نجاحك، نرويها بلغة جمهورك، ونقودها نحو أهدافك التسويقية.
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric">
+                <div class="metric-value">+40%</div>
+                <div class="metric-label">متوسط نمو التحويل في صفحات الهبوط</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">+120</div>
+                <div class="metric-label">مشروع محتوى وتسويق مكتمل</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">24 ساعة</div>
+                <div class="metric-label">متوسط زمن الرد على طلبك الأول</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" id="hero-visual">
+            <div class="hero-orbit"></div>
+            <div class="hero-panel" id="hero-panel">
+              <div class="hero-panel-top">
+                <div class="hero-status">
+                  <div class="hero-status-label">وكلاء الذكاء الاصطناعي للكتابة</div>
+                  <div class="hero-status-pill">
+                    <span class="hero-status-pill-dot"></span>
+                    <span>حرف AI يكتب وفق هوية علامتك</span>
+                  </div>
+                </div>
+                <div class="hero-mini-tabs">
+                  <div class="hero-mini-tab active">Copywriting</div>
+                  <div class="hero-mini-tab">Script</div>
+                  <div class="hero-mini-tab">PR</div>
+                </div>
+              </div>
+
+              <div class="hero-script-window">
+                <div class="hero-script-header">
+                  <div class="hero-script-dots">
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
+                  </div>
+                  <div>حرف – محرر النصوص الذكي</div>
+                </div>
+                <div class="hero-script-body" id="hero-script">
+                  <p>
+                    <span class="gold">العلامة:</span> وكالة رقمية تقدم حلول تسويق ومحتوى للشركات الناشئة في الخليج.<br />
+                    <span class="gold">هدف الحملة:</span> جذب عملاء جدد لحجز استشارة مجانية.<br /><br />
+                    <span class="highlight">النص المقترح لصفحة الهبوط:</span><br />
+                    في السوق المليء بالضجيج، علامتك تحتاج إلى رسالة <span class="gold">واضحة</span>، حادة، وتصل مباشرة
+                    إلى قلب العميل. في <strong>وكالة حرف</strong>، لا نبيعك كلمات؛
+                    نصنع استراتيجية محتوى تقود إلى <span class="highlight">حجز وحركة ونمو.</span><br /><br />
+                    من أول زيارة لصفحتك، نتحكم في رحلة القارئ: ماذا يرى، ماذا يشعر، ومتى يضغط على زر
+                    <span class="gold">"احجز جلسة استشارية"</span>.
+                  </p>
+                  <div class="hero-script-overlay"></div>
+                </div>
+              </div>
+
+              <div class="hero-floating-cards">
+                <div class="hero-float-card">
+                  <div><i class="fa-solid fa-robot"></i></div>
+                  <div class="hero-float-main">وكيل AI مخصص لأسلوب شركتك.</div>
+                  <div class="hero-float-tag">منشورات، إيميلات، سكريبتات، بضغطة واحدة.</div>
+                </div>
+                <div class="hero-float-card" style="transform: translateY(-10px) translateZ(20px);">
+                  <div><i class="fa-solid fa-newspaper"></i></div>
+                  <div class="hero-float-main">وكلاء تحرير صحفي للمؤسسات الإعلامية.</div>
+                  <div class="hero-float-tag">بيانات صحفية متناسقة مع دليل التحرير.</div>
+                </div>
+              </div>
+
+              <div class="hero-photo-strip">
+                <div class="hero-photo"></div>
+                <div class="hero-photo-caption">
+                  استوديو كتابة<br />
+                  <span>بإضاءة تحب الحروف</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <div>
+              <div class="section-kicker">خدمات وكالة حرف</div>
+              <h2 class="section-title">كل خدمة... تبدأ بحرف</h2>
+              <p class="section-desc">
+                نكتب لك محتوى يراعي تفاصيل جمهورك ومحركات البحث معًا، من أول سطر في موقعك
+                إلى آخر كلمة في تقريرك السنوي.
+              </p>
+            </div>
+            <div class="chips">
+              <span class="chip">مواقع إلكترونية</span>
+              <span class="chip">صفحات هبوط</span>
+              <span class="chip">محتوى سوشيال</span>
+              <span class="chip">مقالات SEO</span>
+              <span class="chip">كتابة صحفية</span>
+              <span class="chip">هوية لغوية</span>
+            </div>
+          </div>
+
+          <div class="grid grid-3">
+            <!-- Web Content -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div class="card-title">كتابة محتوى المواقع الإلكترونية</div>
+              <div class="card-sub">
+                صفحات موقع تتحدث بوضوح، وتدفع القارئ لاتخاذ خطوة، وتتماشى مع هوية علامتك.
+              </div>
+              <ul class="card-list">
+                <li>كتابة صفحات الموقع الرئيسية والفرعية</li>
+                <li>تحسين النصوص وصياغة دعوات الإجراء (CTAs)</li>
+                <li>تكييف الأسلوب مع الجمهور المستهدف</li>
+                <li>توافق كامل مع SEO وأفضل ممارسات القراءة</li>
+              </ul>
+            </div>
+
+            <!-- UX & Structure -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <div class="card-title">هيكلة المواقع وتجربة المستخدم (UX)</div>
+              <div class="card-sub">
+                نصوص تقود المستخدم في رحلة واضحة من أول زيارة حتى الإجراء الأخير.
+              </div>
+              <ul class="card-list">
+                <li>تنظيم الأقسام والعناوين والمسارات</li>
+                <li>كتابة Microcopy للأزرار والتعليمات</li>
+                <li>توجيه المستخدم عبر رحلته على الموقع</li>
+              </ul>
+            </div>
+
+            <!-- Landing Pages -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-bullseye-arrow"></i>
+              </div>
+              <div class="card-title">صفحات الهبوط</div>
+              <div class="card-sub">
+                صفحات مصممة للتحويل: كل سطر محسوب ليحجز، يسجّل، أو يبيع.
+              </div>
+              <ul class="card-list">
+                <li>كتابة صفحة تحويل مبيعات عالية التركيز</li>
+                <li>وصف مقنع + محفزات نفسية مدروسة</li>
+                <li>تحسين التحويل (CRO) بناءً على أفضل الممارسات</li>
+              </ul>
+            </div>
+
+            <!-- SEO Articles -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="card-title">مقالات SEO</div>
+              <div class="card-sub">
+                مقالات تظهر في البحث وتُقرأ للنهاية، بدون حشو أو ملل.
+              </div>
+              <ul class="card-list">
+                <li>بحث الكلمات المفتاحية المتعلقة بنشاطك</li>
+                <li>صياغة المقال مع تنسيق ذكي للقراءة</li>
+                <li>روابط داخلية + خارجية داعمة</li>
+              </ul>
+            </div>
+
+            <!-- Social Content -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="card-title">محتوى منصات التواصل الاجتماعي</div>
+              <div class="card-sub">
+                منشورات تحكي صوت علامتك بأسلوب قريب وخفيف ومرتبط بالنتائج.
+              </div>
+              <ul class="card-list">
+                <li>كتابة منشورات مخصصة لكل منصة</li>
+                <li>كابتشنات جذابة وتفاعلية</li>
+                <li>تنويع المحتوى: توعوي، تسويقي، ترفيهي</li>
+              </ul>
+            </div>
+
+            <!-- Content Strategy -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div class="card-title">استراتيجيات التسويق بالمحتوى</div>
+              <div class="card-sub">
+                خطة محتوى عملية يمكن تنفيذها مباشرة مع فريقك أو معنا.
+              </div>
+              <ul class="card-list">
+                <li>خطة محتوى شهرية أو ربع سنوية</li>
+                <li>تحديد أنواع المحتوى وتوقيته وقنواته</li>
+                <li>ملف جاهز للتنفيذ والمتابعة</li>
+              </ul>
+            </div>
+
+            <!-- Branding -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-signature"></i>
+              </div>
+              <div class="card-title">البراندينغ وصناعة الهوية</div>
+              <div class="card-sub">
+                هوية لغوية تجعل اسمك وصوتك متماسكًا في كل نقطة تواصل.
+              </div>
+              <ul class="card-list">
+                <li>صياغة الاسم التجاري (Brand Naming)</li>
+                <li>تحديد شخصية العلامة (Tone of Voice)</li>
+                <li>كتابة الهوية اللغوية ورسائل العلامة</li>
+                <li>إعداد دليل لغوي مبسط للعلامة</li>
+              </ul>
+            </div>
+
+            <!-- Press & PR -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-microphone-lines"></i>
+              </div>
+              <div class="card-title">الكتابة الصحفية والإعلامية</div>
+              <div class="card-sub">
+                نصوص تلائم الصحف والمنصات الإخبارية بأسلوب مهني متزن.
+              </div>
+              <ul class="card-list">
+                <li>صياغة بيانات صحفية احترافية</li>
+                <li>كتابة مقالات رأي / تحليل / تقارير</li>
+                <li>تحرير خطابات رسمية للمتحدثين</li>
+                <li>إعداد تغطيات إعلامية للفعاليات</li>
+              </ul>
+            </div>
+
+            <!-- Corporate & Events -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="card-title">محتوى المؤسسات والفعاليات والتقارير</div>
+              <div class="card-sub">
+                كل ما تحتاجه الشركات والجهات من نصوص رسمية ومنظمة.
+              </div>
+              <ul class="card-list">
+                <li>محتوى علاقات عامة ورسائل رسمية للشركاء</li>
+                <li>كتابة كتيبات الفعاليات وملفات تعريف الشركات</li>
+                <li>إعداد تقارير ختامية وتشغيلية وإدارية</li>
+                <li>كتابة أدلة الاستخدام أو أدلة الخدمات</li>
+              </ul>
+            </div>
+
+            <!-- English Writing -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <div class="card-title">الكتابة باللغة الإنجليزية</div>
+              <div class="card-sub">
+                محتوى إنجليزي مكتوب بأسلوب يناسب ثقافة جمهورك، وليس ترجمة حرفية.
+              </div>
+              <ul class="card-list">
+                <li>كتابة محتوى المواقع باللغة الإنجليزية</li>
+                <li>مقالات تسويقية ومدونات مهنية</li>
+                <li>منشورات سوشيال ميديا بأسلوب مناسب ثقافيًا</li>
+                <li>تحرير ملفات الشركات والعروض + Transcreation</li>
+              </ul>
+            </div>
+
+            <!-- Scripts -->
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-clapperboard"></i>
+              </div>
+              <div class="card-title">كتابة السكريبتات وكتابة الفيديوهات</div>
+              <div class="card-sub">
+                سكريبتات جاهزة للإنتاج، مصممة للصوت، الصورة، والمونتاج.
+              </div>
+              <ul class="card-list">
+                <li>سكريبتات يوتيوب بأسلوب سردي</li>
+                <li>سكريبتات Reels / Shorts / TikTok</li>
+                <li>سكريبتات فيديوهات المبيعات والإعلانات الرقمية</li>
+                <li>نصوص فيديوهات الفعاليات والمؤتمرات</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Solutions -->
+      <section id="ai-solutions" class="ai-section">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <div>
+              <div class="section-kicker">حلول الذكاء الاصطناعي بالهوية اللغوية</div>
+              <h2 class="section-title">وكلاء ذكاء اصطناعي يكتبون بلسان علامتك</h2>
+              <p class="section-desc">
+                نطوّر لك وكلاء كتابة مخصصين، يتعلمون من نبرة علامتك، أدلة التحرير الخاصة بك، وأهدافك،
+                ليكتبوا لك بسرعة الذكاء الاصطناعي وعمق الكاتب البشري.
+              </p>
+            </div>
+            <div class="chips">
+              <span class="chip">وكلاء محتوى للشركات</span>
+              <span class="chip">وكلاء تحرير صحفي</span>
+              <span class="chip">دمج مع فريقك الحالي</span>
+            </div>
+          </div>
+
+          <div class="ai-layout">
+            <div class="ai-highlight reveal">
+              <div class="ai-label">حرف AI Studio</div>
+              <h3 class="ai-main-title">
+                حلول <span>الكتابة بالذكاء الاصطناعي</span> مصممة لشركتك.
+              </h3>
+              <p class="ai-main-sub">
+                بدل وكيل عام يكتب للجميع، نصنع لك وكيل ذكاء اصطناعي مخصص يكتب لك وحدك:
+                يتعلم من أعمالك السابقة، أسلوبك، وقواعد التحرير لديك، ويصبح جزءًا دائمًا من فريق المحتوى.
+              </p>
+              <div class="ai-tagline">
+                <i class="fa-solid fa-sparkles"></i>
+                التوازن: سرعة الآلة + حس الكاتب + هوية ثابتة في كل قناة.
+              </div>
+              <div class="ai-pills">
+                <span class="ai-pill">إعداد دليل صوت العلامة لـ AI</span>
+                <span class="ai-pill">تدريب الوكلاء على أمثلة حقيقية</span>
+                <span class="ai-pill">سيناريوهات كتابة جاهزة للاستخدام</span>
+                <span class="ai-pill">تكامل مع فريق التسويق والتحرير</span>
+              </div>
+            </div>
+
+            <div class="ai-panes">
+              <!-- Business writing agent -->
+              <div class="ai-pane reveal">
+                <div class="ai-pane-header">
+                  <div class="ai-pane-title">
+                    <i class="fa-solid fa-robot"></i>
+                    &nbsp;وكيل كتابة مخصص لشركتك
+                  </div>
+                  <div class="ai-pane-badge">Business AI Writer</div>
+                </div>
+                <ul class="ai-pane-list">
+                  <li>تصميم وكيل ذكاء اصطناعي يكتب باسم علامتك وبنبرة متسقة.</li>
+                  <li>إعداد قوالب ذكية للصفحات، الإيميلات، المنشورات، والعروض.</li>
+                  <li>تغذية الوكيل بمكتبة من أعمالك السابقة لتقليد الأسلوب.</li>
+                  <li>إرشادات استخدام للفريق + ضبط الأمان والتحكم في الرسائل.</li>
+                </ul>
+              </div>
+
+              <!-- Editorial / press agent -->
+              <div class="ai-pane reveal">
+                <div class="ai-pane-header">
+                  <div class="ai-pane-title">
+                    <i class="fa-solid fa-tower-broadcast"></i>
+                    &nbsp;وكلاء كتابة وتحرير صحفي للمؤسسات الإعلامية
+                  </div>
+                  <div class="ai-pane-badge">Editorial AI Agent</div>
+                </div>
+                <ul class="ai-pane-list">
+                  <li>وكيل مخصص يتوافق مع دليل التحرير الصحفي في مؤسستك.</li>
+                  <li>اقتراح وصياغة بيانات صحفية وفق معاييرك التحريرية.</li>
+                  <li>مساعدة في تحرير المقالات، العناوين، والملخصات الإخبارية.</li>
+                  <li>إعداد نسخ مختلفة لنفس الخبر تناسب قنوات متعددة.</li>
+                </ul>
+              </div>
+
+              <!-- Workflow + consulting -->
+              <div class="ai-pane reveal">
+                <div class="ai-pane-header">
+                  <div class="ai-pane-title">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    &nbsp;تصميم سير عمل محتوى يجمع بين الفريق و AI
+                  </div>
+                  <div class="ai-pane-badge">Workflow Design</div>
+                </div>
+                <ul class="ai-pane-list">
+                  <li>رسم رحلة المحتوى من الفكرة إلى النشر مع نقاط تدخل الذكاء الاصطناعي.</li>
+                  <li>تحديد ما يُنجز آليًا وما يتطلب لمسة تحرير بشرية.</li>
+                  <li>تدريب فريقك على استخدام الوكلاء دون خسارة الهوية.</li>
+                  <li>جلسات استشارية لضبط الجودة وتطوير النتائج مع الوقت.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What makes us special -->
+      <section>
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <div>
+              <div class="section-kicker">ما يميزنا</div>
+              <h2 class="section-title">وكالة تعرف تكتب... وتعرف تُظهر كتابتها</h2>
+              <p class="section-desc">
+                شغف قبل الأداء، فهم قبل الكتابة، وتفاصيل تجعل النص يبدو كما لو أنه كُتب لشركتك وحدها.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="card-title">شغف قبل الأداء</div>
+              <div class="card-sub">
+                نكتب بعقل جمهورك، لا بعقل القالب الجاهز. نفهم الرسالة قبل أن نعبّر عنها.
+              </div>
+              <ul class="card-list">
+                <li>إتقان لغوي + تسويقي في سطر واحد.</li>
+                <li>كتابة إنسانية تبيع، لا مجرد كلمات مزخرفة.</li>
+                <li>التزام تام بالمواعيد وجودة التسليم.</li>
+              </ul>
+            </div>
+
+            <div class="card-3d reveal">
+              <div class="card-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div class="card-title">عمق بصري يدعم عمق النص</div>
+              <div class="card-sub">
+                الموقع نفسه يقول إن هذه وكالة تأخذ الكتابة بجدية؛ صور، تدرجات، 3D touch، وحركة محسوبة.
+              </div>
+              <ul class="card-list">
+                <li>صور حقيقية لمشاهد كتابة ومكاتب عمل.</li>
+                <li>خامات ورقية وخلفيات تتنفس بدون إزعاج القارئ.</li>
+                <li>طبقات وعمق بصري يترجم هوية "حرف" بصريًا.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <div>
+              <div class="section-kicker">باقات الأسعار</div>
+              <h2 class="section-title">اختر الحرف الذي تبدأ به</h2>
+              <p class="section-desc">
+                باقات واضحة، قابلة للتخصيص، ويمكن تطويرها مع نمو احتياجك للمحتوى أو لوكلاء الذكاء الاصطناعي.
+              </p>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card reveal">
+              <div class="pricing-label">لبدايات المشاريع</div>
+              <div class="pricing-title">حرف البداية</div>
+              <div class="pricing-price">500<span> ريال</span></div>
+              <ul class="pricing-list">
+                <li><i class="fa-solid fa-check"></i> صفحة رئيسية لموقعك</li>
+                <li><i class="fa-solid fa-check"></i> 3 منشورات سوشيال</li>
+                <li><i class="fa-solid fa-check"></i> SEO أساسي</li>
+                <li><i class="fa-solid fa-check"></i> مراجعة واحدة</li>
+              </ul>
+              <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                احجز باقة حرف البداية
+              </button>
+            </div>
+
+            <!-- Impact -->
+            <div class="pricing-card featured reveal">
+              <div class="pricing-label">الأكثر طلبًا</div>
+              <div class="pricing-title">حرف التأثير</div>
+              <div class="pricing-price">1500<span> ريال</span></div>
+              <ul class="pricing-list">
+                <li><i class="fa-solid fa-check"></i> موقع كامل (5 صفحات)</li>
+                <li><i class="fa-solid fa-check"></i> 8 منشورات سوشيال</li>
+                <li><i class="fa-solid fa-check"></i> مقال SEO واحد</li>
+                <li><i class="fa-solid fa-check"></i> CTAs + نصوص UX أساسية</li>
+                <li><i class="fa-solid fa-check"></i> مراجعتان</li>
+              </ul>
+              <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                اطلب عرض حرف التأثير
+              </button>
+            </div>
+
+            <!-- Identity -->
+            <div class="pricing-card reveal">
+              <div class="pricing-label">للهوية والاستمرارية</div>
+              <div class="pricing-title">حرف الهوية</div>
+              <div class="pricing-price">3000<span> ريال</span></div>
+              <ul class="pricing-list">
+                <li><i class="fa-solid fa-check"></i> كتابة وهيكلة موقعك</li>
+                <li><i class="fa-solid fa-check"></i> هوية لغوية متكاملة</li>
+                <li><i class="fa-solid fa-check"></i> خطة محتوى شهرية (12 منشور)</li>
+                <li><i class="fa-solid fa-check"></i> اختيار اسم المشروع</li>
+                <li><i class="fa-solid fa-check"></i> جلسة استشارية حول المحتوى والذكاء الاصطناعي</li>
+              </ul>
+              <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                اطلب باقة حرف الهوية
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About + Testimonials + FAQ -->
+      <section id="about">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <div>
+              <div class="section-kicker">من نحن</div>
+              <h2 class="section-title">من الحرف تبدأ الرحلة</h2>
+              <p class="section-desc">
+                فريق من الكتّاب والمحررين والمسوّقين... نعيش بين السطور، ونحترف التعبير، ونعرف كيف ندمج
+                الذكاء الاصطناعي في العملية بدون أن نفقد روح النص.
+              </p>
+            </div>
+          </div>
+
+          <div class="split-layout">
+            <div class="about-text reveal">
+              <p>
+                رسالتنا: أن نمنح علامتك التجارية صوتًا يُحكى، وأسلوبًا يُحفظ، وتأثيرًا لا يُنسى – عبر مزج
+                حرفية الكتابة مع أدوات الذكاء الاصطناعي عندما تضيف قيمة حقيقية.
+              </p>
+              <p>قيمنا:</p>
+              <ul class="about-values">
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                  الإبداع قبل القواعد، لكن دون فوضى.
+                </li>
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                  البساطة التي تُدهش وتُقنع، لا التي تُسطّح الفكرة.
+                </li>
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                  فهم عميق للرسالة قبل التعبير عنها في أي قناة.
+                </li>
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                  العمل بشغف الحروف واحترام وقت العميل ونتائجه.
+                </li>
+              </ul>
+            </div>
+
+            <div class="reveal">
+              <div class="section-kicker">آراء العملاء</div>
+              <div class="testimonials">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote">
+                    "حرف لم تكتب لي فقط، بل كتبتني."
+                  </div>
+                  <div class="testimonial-name">د. سارة العبدالله</div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="testimonial-quote">
+                    "زاد معدل التحويل بنسبة 40% بفضل صفحتهم."
+                  </div>
+                  <div class="testimonial-name">فهد العنزي</div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="testimonial-quote">
+                    "أسلوب كتابي فيه روح. أشعر أنهم يكتبون بنبضنا."
+                  </div>
+                  <div class="testimonial-name">رُلى خليل</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="split-layout" style="margin-top:36px; gap:24px;">
+            <div class="reveal">
+              <div class="section-kicker">الأسئلة الشائعة</div>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <div class="faq-index">1</div>
+                  <div>ما أنواع المحتوى التي يمكنكم كتابتها؟</div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-index">2</div>
+                  <div>هل يمكن طلب المحتوى وحده بدون تنفيذ التصميم أو النشر؟</div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-index">3</div>
+                  <div>ما مدة التسليم المتوقعة لكل نوع من الخدمات؟</div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-index">4</div>
+                  <div>هل تكتبون بالإنجليزية وبنفس مستوى العربية؟</div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-index">5</div>
+                  <div>هل توفرون تعديلات على المحتوى بعد التسليم؟</div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-index">6</div>
+                  <div>كيف أبدأ معكم؟ وما هي الخطوة الأولى؟</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal">
+              <div class="card-3d">
+                <div class="card-title">جلسة تعريفية مجانية</div>
+                <div class="card-sub">
+                  إذا كان لديك أسئلة حول محتوى موقعك، صفحات الهبوط، أو كيف يمكن لوكيل ذكاء اصطناعي أن يخدم فريقك التحريري،
+                  احجز جلسة تعريفية قصيرة ونستعرض معك الخيارات.
+                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                  <i class="fa-regular fa-calendar-check"></i>
+                  احجز مكالمة تعريفية
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact-section">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <div>
+              <div class="section-kicker">تواصل معنا</div>
+              <h2 class="section-title">لنكتب أول حرف في مشروعك القادم</h2>
+              <p class="section-desc">
+                أرسل لنا فكرة مشروعك أو رابط موقعك الحالي، وسنعود لك خلال 24 ساعة باقتراح واضح وخيارات عمل مباشرة.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-layout">
+            <div class="contact-info reveal">
+              <div class="contact-line">
+                <i class="fa-regular fa-envelope"></i>
+                <div>
+                  <div>البريد الإلكتروني</div>
+                  <div><a href="mailto:contact@harfagency.com">contact@harfagency.com</a></div>
+                </div>
+              </div>
+
+              <div class="contact-line">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div>
+                  <div>الجوال / واتساب</div>
+                  <div><a href="tel:+9665xxxxxxxx">+966 5xxxxxxx</a></div>
+                </div>
+              </div>
+
+              <div class="contact-line">
+                <i class="fa-solid fa-share-nodes"></i>
+                <div>
+                  <div>تابعنا على المنصات</div>
+                  <div class="social-links" style="margin-top:6px;">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-line">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                  <div>كيف نعمل؟</div>
+                  <div>
+                    نتفق على النطاق، نستلم منك المعلومات، نكتب، نراجع معك، ثم نسلمك ملفًا جاهزًا للتنفيذ أو
+                    نوصل مباشرة مع فريقك أو منصتك.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact-form reveal">
+              <div class="form-row">
+                <div class="form-control">
+                  <label for="name">الاسم</label>
+                  <input type="text" id="name" name="name" placeholder="الاسم الثلاثي أو اسم الجهة" />
+                </div>
+                <div class="form-control">
+                  <label for="email">البريد الإلكتروني</label>
+                  <input type="email" id="email" name="email" placeholder="email@example.com" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-control">
+                  <label for="whatsapp">رقم الجوال / واتساب</label>
+                  <input type="tel" id="whatsapp" name="whatsapp" placeholder="+966 5xxxxxxx" />
+                </div>
+                <div class="form-control">
+                  <label for="service">نوع الخدمة المطلوبة</label>
+                  <select id="service" name="service">
+                    <option value="">اختر من القائمة</option>
+                    <option value="website">كتابة محتوى موقع</option>
+                    <option value="landing">صفحة هبوط</option>
+                    <option value="social">محتوى سوشيال ميديا</option>
+                    <option value="seo">مقالات SEO</option>
+                    <option value="branding">هوية لغوية وبراندينغ</option>
+                    <option value="ai">حلول كتابة بالذكاء الاصطناعي</option>
+                    <option value="press">محتوى صحفي / إعلامي</option>
+                    <option value="other">أخرى</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-control">
+                <label for="details">حدّثنا عن مشروعك</label>
+                <textarea id="details" name="details" rows="4" placeholder="رابط الموقع الحالي، نوع الخدمة، الجمهور المستهدف، والنتيجة التي تريد الوصول لها."></textarea>
+                <div class="form-helper">كلما كانت التفاصيل أوضح، كان اقتراحنا أدق وأقرب لك.</div>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  أرسل الطلب
+                </button>
+                <div class="form-note">
+                  <i class="fa-regular fa-clock"></i>
+                  نرد عليك خلال 24 ساعة عمل مع الخطوة التالية المقترحة.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© وكالة حرف – من أول حرف... تبدأ الحكاية.</div>
+        <div class="footer-links">
+          <a href="#hero">الرئيسية</a>
+          <a href="#services">الخدمات</a>
+          <a href="#ai-solutions">حلول الذكاء الاصطناعي</a>
+          <a href="#pricing">الباقات</a>
+          <a href="#contact">تواصل</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <i class="fa-regular fa-copyright"></i>
-        <span>وكالة حرف</span>
-        <span>– من أول حرف تبدأ الحكاية.</span>
-      </div>
-      <div class="footer-links">
-        <a href="#top">العودة للأعلى</a>
-        <a href="#services">الخدمات</a>
-        <a href="#pricing">الباقات</a>
-        <a href="#contact">تواصل</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    // FAQ toggle
-    document.querySelectorAll(".faq-item").forEach((item) => {
-      const btn = item.querySelector(".faq-question");
-      btn.addEventListener("click", () => {
-        const isActive = item.classList.contains("active");
-        document
-          .querySelectorAll(".faq-item")
-          .forEach((el) => el.classList.remove("active"));
-        if (!isActive) item.classList.add("active");
-      });
-    });
+    // Scroll reveal
+    const revealElements = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealElements.forEach((el) => observer.observe(el));
 
-    // Prevent actual submit (front-end only demo)
-    document
-      .querySelector(".contact-form")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("تم استلام طلبك مبدئيًا. يمكنك ربط هذا النموذج بنظامك لاحقًا.");
+    // Hero 3D tilt (subtle)
+    const heroPanel = document.getElementById("hero-panel");
+    const heroVisual = document.getElementById("hero-visual");
+
+    if (heroVisual && heroPanel) {
+      heroVisual.addEventListener("mousemove", (e) => {
+        const rect = heroVisual.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * -10; // right-left
+        const rotateX = ((y / rect.height) - 0.5) * 8; // up-down
+        heroPanel.style.transform =
+          "rotateY(" + rotateY + "deg) rotateX(" + rotateX + "deg)";
       });
+
+      heroVisual.addEventListener("mouseleave", () => {
+        heroPanel.style.transform = "rotateY(-8deg) rotateX(7deg)";
+      });
+    }
+
+    // Prevent default form submission (front-end only demo)
+    const contactForm = document.querySelector(".contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("تم استلام طلبك شكليًا في النسخة التجريبية. اربطه بنظامك أو بريدك لحفظ الطلبات.");
+      });
+    }
   </script>
 </body>
 </html>
